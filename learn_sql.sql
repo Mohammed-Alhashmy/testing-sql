@@ -39,3 +39,9 @@ SELECT * FROM books WHERE title = 'The Almanack of Naval Ravikant';
 DELETE FROM books WHERE title = 'Clean Code';
 
 SELECT * FROM books;
+
+
+SELECT authors.full_name, COUNT(books.book_id) AS total_books
+FROM authors
+JOIN books on authors.authors_id = books.authors_id
+GROUP BY authors.full_name;
